@@ -4,9 +4,7 @@ f.write("파일 생성\n")
 f.write("파일 생성\n")
 f.write("파일 생성\n")
 f.write("파일 생성\n")
-f.write("파일 생성\n")
-f.write("파일 생성\n")
-f.write("파일 생성\n")
+f.write("파일 생성\n") 
 
 f.close()
 
