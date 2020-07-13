@@ -133,7 +133,6 @@ class Customer:
                 pass
             else:
                 self.index += 1
-                
             customer = self.custlist[self.index]
             print("이름 : ", customer["name"])
             print("성별 : ", customer["gender"])
