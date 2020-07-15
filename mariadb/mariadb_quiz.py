@@ -18,8 +18,9 @@ class MariaDB:
 
     def create_table(self):
         self.__connect()
-        sql = """create table if not exists books 
-        (book_id integer Not null Auto_increment primary key, 
+        sql = """
+        create table if not exists books (
+        book_id integer Not null Auto_increment primary key, 
         title text,
         published_date text,
         publisher text,
@@ -57,15 +58,9 @@ class MariaDB:
         self.__unconnect()
         return book
 
-    def select_book_condition(
-        self, condition, value
-    ):
+    def select_book_condition(self, condition, value):
         self.__connect()
-        sql = (
-            "Select * from books where "
-            + condition
-            + " LIKE %s"
-        )
+        sql = "Select * from books where " + condition + " LIKE %s"
         value = "%" + value + "%"
         self.c.execute(sql, value)
         books = self.c.fetchall()
@@ -80,9 +75,7 @@ class MariaDB:
 
     def delete_book_id(self, book_id):
         self.__connect()
-        sql = (
-            "Delete from books where book_id = %s"
-        )
+        sql = "Delete from books where book_id = %s"
         self.c.execute(sql, book_id)
         self.__unconnect()
 
