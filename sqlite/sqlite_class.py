@@ -3,7 +3,9 @@ import sqlite3
 
 class SqlLite:
     def __create_conn(self):
-        self.__conn = sqlite3.connect("./kfq_python/sqlite/example.db")
+        self.__conn = sqlite3.connect(
+            "./kfq_python/sqlite/example.db"
+        )
 
     def create_table(self):
         self.__create_conn()
@@ -25,7 +27,9 @@ class SqlLite:
     def insert_book(self, item):
         self.__create_conn()
         c = self.__conn.cursor()
-        sql = "INSERT INTO books values(?,?,?,?,?)"
+        sql = (
+            "INSERT INTO books values(?,?,?,?,?)"
+        )
         c.execute(sql, item)
         self.__conn.commit()
         c.close()
@@ -34,7 +38,9 @@ class SqlLite:
     def insert_books(self, items):
         self.__create_conn()
         c = self.__conn.cursor()
-        sql = "INSERT INTO books values(?,?,?,?,?)"
+        sql = (
+            "INSERT INTO books values(?,?,?,?,?)"
+        )
         c.executemany(sql, items)
         self.__conn.commit()
         c.close()
@@ -54,9 +60,12 @@ class SqlLite:
     def read_book_id(self, id):
         self.__create_conn()
         c = self.__conn.cursor()
-        sql = "Select * from books where rowid = %s" % id
+        sql = (
+            "Select * from books where rowid = %s"
+            % id
+        )
         c.execute(sql)
-        book = c.fetchall()
+        book = c.fetchone()
         self.__conn.commit()
         c.close()
         self.__conn.close()
@@ -78,12 +87,24 @@ class SqlLite:
 sql = SqlLite()
 sql.create_table()
 
-item = ["생활코딩! 파이썬", "2020-07-13", "생활코딩", 200, 10]
+item = [
+    "생활코딩! 파이썬",
+    "2020-07-13",
+    "생활코딩",
+    200,
+    10,
+]
 # sql.insert_book(item)
 
 items = [
     ["생활코딩! 자바", "2013-07-13", "생활코딩", 400, 10],
-    ["생활코딩! HTML&CSS3", "2020-07-13", "생활코딩", 200, 10],
+    [
+        "생활코딩! HTML&CSS3",
+        "2020-07-13",
+        "생활코딩",
+        200,
+        10,
+    ],
 ]
 # sql.insert_books(items)
 

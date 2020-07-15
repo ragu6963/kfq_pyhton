@@ -8,6 +8,7 @@ conn = pymysql.connect(
     cursorclass=pymysql.cursors.DictCursor,
 )
 c = conn.cursor()
+
 # sql = "create table if not exists stocks (data text,trans text,symbol text,qty real,price real)"
 # c.execute(sql)
 sql = """

@@ -11,9 +11,9 @@ class OracleDB:
     def create_table(self):
         conn = self.connect()
         c = conn.cursor()
-        # sql = "CREATE SEQUENCE IF NOT EXISTS book_seq START WITH 1 INCREMENT BY 1"
-        # c.execute(sql)
-        # conn.commit()
+        sql = "CREATE SEQUENCE IF NOT EXISTS book_seq START WITH 1 INCREMENT BY 1"
+        c.execute(sql)
+        conn.commit()
 
         sql = """
                 Create table books(

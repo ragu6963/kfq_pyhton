@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %} filelist_page {% endblock title %}
+{% block content %}
+<h1>다운로드 파일 목록</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>#</th>
+            <th>목록</th>
+            <th>다운로드</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for file in files %}
+        <tr>
+            <th scope="row">{{ loop.index }}</th>
+            <td>{{file}}</td>
+            <td><a href="/files/{{file}}">Download</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock content %}

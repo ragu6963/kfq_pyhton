@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+    <div class="container mt-5">
+      <div class="form-group">
+        <h1>이력서 작성</h1>
+        <form action="/method/" method="post" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="name">이름</label>
+            <input class="form-control" type="text" name="name" id="name" />
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="birth">생년월일</label>
+            <input class="form-control" type="date" name="birth" id="birth" />
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="armycondition">병역상황</label>
+            <input
+              class="form-control"
+              type="text"
+              name="armycondition"
+              id="armycondition"
+            />
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="address">주소</label>
+            <input
+              class="form-control"
+              type="text"
+              name="address"
+              id="address"
+            />
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="email">이메일</label>
+            <input class="form-control" type="text" name="email" id="email" />
+          </div>
+          <br />
+          <div class="form-group">
+            <label for="pic">증명사진</label>
+            <br />
+            <input type="file" name="pic" id="pic" />
+          </div>
+          <input class="btn btn-primary" type="submit" value="제출" />
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
