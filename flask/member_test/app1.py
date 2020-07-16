@@ -117,7 +117,6 @@ def ajaxlist():
             query = User.query.filter(User.userid.like("%" + userid + "%")).order_by(User.userid)
             data = query.all()
             result = []
-            return jsonify(data)
 
             for item in data:
                 i = {
