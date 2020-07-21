@@ -2,7 +2,7 @@ import urllib.request
 import json
 import datetime
 
-key = "597f5f9d1e7f4bc61c7a361be2f2ca69"
+key = ""
 main_url = (
     "http://www.kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchDailyBoxOfficeList.json"
 )

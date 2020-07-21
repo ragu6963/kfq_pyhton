@@ -9,3 +9,4 @@ with urllib.request.urlopen(url) as response:
 result_list = soup.select("li.quickResultLstCon")
 for result in result_list:
     print(result)
+
