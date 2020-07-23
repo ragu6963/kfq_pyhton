@@ -13,7 +13,9 @@ from selenium.webdriver.common.keys import Keys
 def copy_input(xpath, input):
     pyperclip.copy(input)
     driver.find_element_by_xpath(xpath).click()
-    ActionChains(driver).key_down(Keys.CONTROL).send_keys("v").key_up(Keys.CONTROL).perform()
+    ActionChains(driver).key_down(Keys.CONTROL).send_keys("v").key_up(
+        Keys.CONTROL
+    ).perform()
     time.sleep(1)
 
 
